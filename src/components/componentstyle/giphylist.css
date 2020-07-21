@@ -127,7 +127,8 @@
 .renderGiphyImages{
     transition: .15s;
     box-shadow: 3px 4px 5px 0px rgba(70, 66, 66, 0.75);
-    height: 280px;
+    min-height: 310px;
+    max-height: 110%;
     /* width: 85%; */
     background: linear-gradient(45deg, #fdc830, #e69d78);position: relative;
 border-radius: 5px;
