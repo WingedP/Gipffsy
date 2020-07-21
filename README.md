@@ -15,7 +15,7 @@ npm install for package.json.<br />
 npm start.<br />
 
 In localhost, env file will be required. You'll need to set up REACT_APP_GIPHY_KEY = "your api key here". <br />
-You can either create your own key at [GIPHY](https://developers.giphy.com/dashboard/) or contact me by [email](elysiawepts25@gmail.com)
+You can either create your own key at [GIPHY](https://developers.giphy.com/dashboard/) or contact me by [e-email](mailto:elysiawepts25@gmail.com).
 
 
 ### `That's all. Happy viewing :).`
