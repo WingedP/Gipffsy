@@ -9,4 +9,7 @@ All trendings GIFs (>300) are displayed.<br />
 Viewer can toggle between viewing style. <br />
 Responsive. <br />
 
+### `To run on local:`
+npm install.
+
 ### `That's all. Happy viewing :).`
