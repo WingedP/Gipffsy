@@ -24,11 +24,9 @@ const getGiphyImages = async()=>{
     let data = await response.json();
     setGiphyImages(data.data);
     setTrendTotal(data.pagination)
-    console.log("data",data)
 
 }
 
-console.log("giphyImages",giphyImages)
 if(giphyImages==null)return(<div>Loading...</div>)
 const renderGiphyImages = giphyImages.map(el=>{return(
     <div className="renderGiphyImages">
@@ -44,22 +42,41 @@ const renderGiphyImages = giphyImages.map(el=>{return(
 )
 })
 
-{/* <img src="https://media2.giphy.com/media/lp0Z1Ye4cNsZ5Ih82r/giphy.gif"></img> */}
 
 return (<div className="giphylist">
+<UserDisplay/>
+<TrendingHeader limit={limit} trendTotal={trendTotal} viewChange={viewChange} 
+changeCardView={changeCardView} loadMore={loadMore}/>
+<div  className={viewChange==false ?"renderGiphyImages-wrapper2" : "renderGiphyImages-wrapper"} >
+{renderGiphyImages}</div>  
+
+<button className="loadmore-btn" onClick={()=>{loadMore()}}>
+   <div className="loadingtext">Load More</div>     
+<ul className="loading">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</button>
+{trendTotal?  <div className="trend-number">showing <span className="highlight">{limit}</span> out of 
+<span className="highlight">{trendTotal.total_count} </span></div> : <div>loading</div>}        
+
+</div>
+)}
 
 
-<div className="user-display">
 
+function UserDisplay(){return(<div className="user-display">
 <div className="roundround"></div>
-
   <div className="usersection">
     <div className="userhere">
         <img src="https://media2.giphy.com/media/lp0Z1Ye4cNsZ5Ih82r/giphy.gif"></img>
     </div>
-<div className="welcomemsg"><div>Hello,</div>
-
-<div>lovely!</div></div>
+<div className="welcomemsg">
+    <div>Hello,</div>
+    <div>lovely!</div>
+</div>
 
     </div>     
 
@@ -68,47 +85,20 @@ return (<div className="giphylist">
 
       </div>  
 
-<div className="trending-part">
-<div className="trending-title">TRENDING GIFsss AROUND THE BLOCK</div>
-{trendTotal?  <div className="trend-number">showing <span className="highlight">{limit}</span> out of 
-<span className="highlight">{trendTotal.total_count} </span></div> : <div>loading</div>}
+)};
 
-<div className="btn-toplist"><button className="viewchange-btn" onClick={()=>{changeCardView()}}>
-{viewChange==false? 
+function TrendingHeader(props){return(<div className="trending-part">
+<div className="trending-title">TRENDING GIFsss AROUND THE BLOCK</div>
+{props.trendTotal?  <div className="trend-number">showing <span className="highlight">{props.limit}</span> out of 
+<span className="highlight">{props.trendTotal.total_count} </span></div> : <div>loading</div>}
+
+<div className="btn-toplist"><button className="viewchange-btn" onClick={()=>{props.changeCardView()}}>
+{props.viewChange==false? 
 <i style={{ fontSize: "2rem" }} class="viewchangeIcon1 fab fa-slack-hash"></i> 
 : <i style={{ fontSize: "2rem" }} class="viewchangeIcon2 fab fa-slack"></i>  }
           </button>
 
 
-          <button className="loadmore-btn-top" onClick={()=>{loadMore()}}>Load More</button></div>
-
-
-
+ <button className="loadmore-btn-top" onClick={()=>{props.loadMore()}}>Load More</button></div>
 </div>
-
-
-<div  className={viewChange==false ?"renderGiphyImages-wrapper2" : "renderGiphyImages-wrapper"} >
-
-
-
-    
-{renderGiphyImages}</div>  
-
-
-<button className="loadmore-btn" onClick={()=>{loadMore()}}>
-   <div className="loadingtext">    Load More
-</div> 
-    
-<ul className="loading">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-    
-    </button>
-
-    {trendTotal?  <div className="trend-number">showing <span className="highlight">{limit}</span> out of 
-<span className="highlight">{trendTotal.total_count} </span></div> : <div>loading</div>}        </div>
-    )
-}
+)};

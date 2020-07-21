@@ -8,14 +8,13 @@ export default function RandomGip() {
     const getRandomGip = async()=>{
         const response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=${apiKey}`);
         let data = await response.json();
-        console.log("randogip data here:",data.data);
+        // console.log("randogip data here:",data.data);
         
         setRandoGip(data.data)
     }
     
     return (
         <div className="randoGip">
-            {/* {randoGip && randoGip.images ? randoGip.images.downsized_small : "loading"} */}
         </div>
     )
 }
