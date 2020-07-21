@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+
+
+
+:root{
+    --brandgradient: linear-gradient(147deg, #FFE53B 0%, #dd7575 74%, #a8ff85);
+
+
+}
+
+.giphylist{
+    /* background: rgba(59, 22, 59, 0.658); */
+    /* background: transparent; */
+
+}
+
+.trending-part{
+    padding-top: .1rem;
+    padding-bottom: 2rem;
+}
+.roundround{
+    height: 80vh;
+    width: 100vw;
+    top: -85%;
+    left: -.3%;
+    background: violet;
+    border-radius: 50%;
+    position: absolute;
+
+}
+.user-display{
+    overflow: hidden;
+    position: relative;
+    background: rgba(136, 91, 136, 0.658);
+    height: 20rem;
+
+    /* clip-path: ellipse(50% 30% at 50% 1%); */
+
+/* path d="M 0,0
+         L 0,40
+         Q 250,80 500,40
+         L 500,0
+         Z" */
+}
+.userAvatar{
+    width: 5rem;
+    min-width: 5rem;
+    min-height: 5rem;
+    border-radius: 5px;
+}
+
+
+
+.usersection{
+    display: flex;
+}
+    
+.welcomemsg{
+    position: relative;
+    /* background: red; */
+    z-index: 1;
+    font-size: 4rem;
+    letter-spacing: 5px;
+    color: rgb(206, 218, 215);
+    text-shadow: 3px 3px black;
+    font-family: 'Concert One', cursive;
+
+
+}
+.userhere{
+    background: rgb(97, 10, 82);
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    z-index: 1;
+}
+.userAvatar-wrapper{
+    background: rgb(117, 91, 111);
+    border-radius: 5px;
+    width: fit-content;
+    position: absolute;
+    bottom: -3rem;
+    right:1rem;
+    padding: .5rem;
+}
+
+.renderGiphyImages-wrapper{
+    /* display: grid;
+    width: 100vw !important;
+    overflow-x: hidden;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: aliceblue; */
+
+    /* background: rgb(156, 156, 201); */
+    background: transparent;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+}
+
+.renderGiphyImages-wrapper2{
+    /* background: rgb(156, 156, 201); */
+    
+    background: transparent;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+}
+
+.renderGiphyImages:hover{
+    box-shadow: -1px -2px 31px 11px rgba(233, 112, 112, 0.75);
+    transition: .15s;
+    background: linear-gradient(to right, #f2994a, #f2c94c);
+}
+
+.renderGiphyImages{
+    transition: .15s;
+    box-shadow: 3px 4px 5px 0px rgba(70, 66, 66, 0.75);
+    height: 280px;
+    /* width: 85%; */
+    background: linear-gradient(45deg, #fdc830, #e69d78);position: relative;
+border-radius: 5px;
+ margin-bottom: 4rem;
+
+ /* width: fit-content; */
+/* width: 20rem; */
+/* margin: 1rem; */
+ margin-left: .5rem;
+ margin-right: .5rem;
+ padding-bottom: 1.2rem;
+}
+.gify-imgs{
+    width: 70%;
+}
+
+
+.btn-toplist{
+    display: flex;
+    justify-content: center;
+}
+.loadmore-btn-top:hover{
+    background: rgba(237, 255, 136, 0.795);
+    border: 2px solid rgb(172, 158, 158);
+
+}
+.loadmore-btn-top{
+    margin-left: .5rem;
+    font-family: 'Concert One', cursive;
+    background: rgba(197, 197, 226, 0.795);
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid rgb(31, 28, 28);
+    border-radius: 50%;
+    transition: .3s;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.loadmore-btn{
+    background: rgba(197, 197, 226, 0);
+    width: fit-content;
+    border: none;
+    border-radius: 5px;
+    height: 5rem;
+    transition: .3s;
+
+}
+.loadmore-btn:hover .loadingtext{
+    color: white;
+    text-shadow: 2px 2px black;
+}
+.loadmore-btn:hover .loading{
+    transition: .3s;
+    visibility: visible;
+
+}
+
+
+.loadingtext{
+    font-family: 'Modak', cursive;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: rgb(22, 27, 25);
+    text-shadow: 3px 3px rgb(196, 186, 186);
+
+}
+.loading{
+visibility: hidden;
+}
+
+/* .viewchangeIcon1{
+    color: teal;
+    text-shadow: 2px 2px black;
+} */
+
+
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+  }
+.viewchange-btn{
+    background: rgb(230, 224, 224);
+    border: 2px solid rgb(53, 50, 50) !important;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    border-radius: 50%;
+    transition: .3s;
+
+}
+.viewchange-btn:hover{
+    border: 2px solid rgb(223, 215, 215) !important;
+transition: .3s;
+}
+.viewchange-btn:hover .viewchangeIcon1{
+    animation: spin 10s reverse infinite linear;
+    transition: .3s;
+
+    color: greenyellow;
+    text-shadow: 3px 3px black;
+}
+
+
+.viewchange-btn:hover .viewchangeIcon2{
+    animation: spin 10s reverse infinite linear;
+    transition: .3s;
+
+    color: rgb(241, 146, 56);
+    text-shadow: 3px 3px black;
+}
+
+@media only screen and (max-width: 430px) {
+    .renderGiphyImages-wrapper{
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+    }
+    .welcomemsg{
+    display: none;}
+}
+
+@keyframes brandname-animation {
+    0% {background-position: left}
+    50% {background-position: right}
+    /* 100% {background-position: left} */
+  }
+
+
+.brand-wrapper{
+    font-family: 'Modak', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+color: rgb(231, 203, 161);
+text-shadow: 2px 2px rgb(0, 0, 0);
+
+}
+.brand{padding-left: .5rem;
+    padding-right: .5rem;
+    font-size: 4rem;
+    text-shadow: 2px 2px rgba(46, 40, 40, 0.26);
+    background-image: var(--brandgradient);
+    background-clip: text;
+    background-size: 200%;
+    color: transparent;
+    font-family: 'Modak', cursive;
+    animation: brandname-animation 9s infinite  alternate;
+
+}
+
+.trend-number{
+    font-size: 2.1rem;
+    padding-bottom: 2rem;
+
+}
+.trending-title{
+    font-size: 3.5rem;
+    font-family: 'Concert One', cursive;
+    text-shadow: 2px 2px white;
+    padding-bottom: 1rem;
+
+}
+.highlight{
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+
+
+.gip-title{
+    font-size: 1.4rem;
+    width: 90%;
+    padding-bottom: .6rem;
+    font-family: 'Concert One', cursive;
+    color: rgb(63, 54, 54);
+    text-shadow: 2px 2px rgb(223, 216, 216);  
+}
+
+
+ul{
+
+    /* transform:translate(-50%,-50%); */
+    margin:0;
+    padding:0;
+    display:flex;
+    
+  }
+  ul li{
+    list-style:none;
+    width:40px;
+    height:40px;
+    background:#fff;
+    border-radius:50%;
+    animation:grow 1.6s ease-in-out infinite;
+  }
+    @keyframes grow
+    {
+      0% , 40% , 100%
+      {
+        transform:scale(0.2);
+      }
+      20%{
+         transform:scale(1);
+  
+      }
+    }
+  
+  ul li:nth-child(1){
+    animation-delay:-1.4s;
+    background:#ffff00;
+    box-shadow:0 0 50px #ffff00;
+    
+  }
+  ul li:nth-child(2){
+    animation-delay:-1.2s;
+    background:#76ff03;
+    box-shadow:0 0 50px #76ff03;
+    
+  }
+  ul li:nth-child(3){
+    animation-delay:-1s;
+    background:#f06292;
+    box-shadow:0 0 50px #f06292;
+    
+  }
+  ul li:nth-child(4){
+    animation-delay:-0.8s;
+    background:#4fc3f7;
+    box-shadow:0 0 50px #4fc3f7;
+    
+  }
